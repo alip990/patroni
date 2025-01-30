@@ -163,7 +163,7 @@ RUN sed -i 's/env python/&3/' /patroni*.py \
     && sed -i 's/^  - encoding: UTF8/  - locale: en_US.UTF-8\n&/' postgres?.yml \
     && sed -i 's/^\(scope\|name\|etcd\|  host\|  authentication\|  connect_address\|  parameters\):/#&/' postgres?.yml \
     && sed -i 's/^    \(replication\|superuser\|rewind\|unix_socket_directories\|\(\(  \)\{0,1\}\(username\|password\)\)\):/#&/' postgres?.yml \
-    && sed -i 's/^      parameters:/&\n        max_connections: 100/'  postgres?.yml \
+    && sed -i 's/^      parameters:/&\n        max_connections: 1000/'  postgres?.yml \
     && sed -i 's/^      pg_hba:/&\n      - local all all trust/' postgres?.yml \
     && sed -i 's/^\(.*\) \(.*\) md5/\1 all md5/' postgres?.yml \
     && if [ "$COMPRESS" = "true" ]; then chmod u+s /usr/bin/sudo; fi \
