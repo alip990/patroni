@@ -1,0 +1,5 @@
+# Example configuration for Patroni Exporter
+# Adjust based on the actual exporter documentation
+
+listen_address: ":9188"
+patroni_endpoint: "http://patroni1:8008/metrics"
